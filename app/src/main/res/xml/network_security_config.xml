@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The MF937 admin API is plain HTTP with no certificate. Domain-scoped
+  cleartext rules using raw IP addresses (e.g. 192.168.8.1) as <domain>
+  are unreliable across Android versions since the spec expects
+  hostnames, not IP literals. Since this app only ever talks to your own
+  router on your own network, it's simplest and most robust to just
+  allow cleartext at the base level rather than chase IP-matching quirks.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>
